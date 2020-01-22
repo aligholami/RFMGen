@@ -3,7 +3,7 @@ import torch
 import os
 from torchvision import datasets, transforms
 from detectron2.config import get_cfg
-from objectifier.rfg_baseline import RFGenerator
+from rfmgen.objectifier.rfg_baseline import RFGenerator
 from tqdm import tqdm
 from tables import *
 
@@ -60,9 +60,6 @@ def main():
     parser.add_argument('--dataset', type=str, default='CIFAR10')
     parser.add_argument('--batch-size', type=int, default=64)
     parser.add_argument('--lr', type=float, default=0.01)
-    parser.add_argument('--epochs', type=int, default=25)
-    parser.add_argument('--train-rf-path', type=str, default='/local-scratch/region-features/train')
-    parser.add_argument('--val-rf-path', type=str, default='/local-scratch/region-features/val')
     parser.add_argument('--dataset-path', type=str, default='/local-scratch/cifar-dataset')
     parser.add_argument('--rpn-config-path', type=str, default='./detectron-configs/base_rcnn_rpn.yaml')
     parser.add_argument('--rpn-pretrained-path', type=str, default='./pretrained/model_final.pkl')

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ce1dc94d-b066-4b93-b205-fcc07c72bdc5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/rfmgen/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rfmgen/detectron-configs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rfmgen/objectifier/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detectron-configs/base_rcnn_rpn.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/rfmgen/detectron-configs/base_rcnn_rpn.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/rfmgen/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objectifier/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objectifier/rfg_baseline.py" beforeDir="false" afterPath="$PROJECT_DIR$/rfmgen/objectifier/rfg_baseline.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Wgk4qygWHBfS7Q1DQ6JxCatasZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hexph\Desktop\Codebase\RFMGen\rfmgen" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RFMGen" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\hexph\Desktop\Codebase\RFMGen\rfmgen\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce1dc94d-b066-4b93-b205-fcc07c72bdc5" name="Default Changelist" comment="" />
+      <created>1579578436142</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579578436142</updated>
+      <workItem from="1579578445778" duration="1332000" />
+      <workItem from="1579581539513" duration="25774000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="345" y="161" key="#Deployment" timestamp="1579637230272">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="345" y="161" key="#Deployment/0.0.1504.963@0.0.1504.963" timestamp="1579637230272" />
+    <state x="345" y="161" key="#Options" timestamp="1579636838666">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="345" y="161" key="#Options/0.0.1504.963@0.0.1504.963" timestamp="1579636838666" />
+    <state x="578" y="397" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1579655301597">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="578" y="397" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1504.963@0.0.1504.963" timestamp="1579655301597" />
+    <state width="1504" height="333" key="GridCell.Tab.0.bottom" timestamp="1579655189100">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1504" height="333" key="GridCell.Tab.0.bottom/0.0.1504.963@0.0.1504.963" timestamp="1579655189100" />
+    <state width="1504" height="333" key="GridCell.Tab.0.center" timestamp="1579655189099">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1504" height="333" key="GridCell.Tab.0.center/0.0.1504.963@0.0.1504.963" timestamp="1579655189099" />
+    <state width="1504" height="333" key="GridCell.Tab.0.left" timestamp="1579655189099">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1504" height="333" key="GridCell.Tab.0.left/0.0.1504.963@0.0.1504.963" timestamp="1579655189099" />
+    <state width="1504" height="333" key="GridCell.Tab.0.right" timestamp="1579655189099">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1504" height="333" key="GridCell.Tab.0.right/0.0.1504.963@0.0.1504.963" timestamp="1579655189099" />
+    <state width="1504" height="333" key="GridCell.Tab.1.bottom" timestamp="1579655189100">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1504" height="333" key="GridCell.Tab.1.bottom/0.0.1504.963@0.0.1504.963" timestamp="1579655189100" />
+    <state width="1504" height="333" key="GridCell.Tab.1.center" timestamp="1579655189100">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1504" height="333" key="GridCell.Tab.1.center/0.0.1504.963@0.0.1504.963" timestamp="1579655189100" />
+    <state width="1504" height="333" key="GridCell.Tab.1.left" timestamp="1579655189100">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1504" height="333" key="GridCell.Tab.1.left/0.0.1504.963@0.0.1504.963" timestamp="1579655189100" />
+    <state width="1504" height="333" key="GridCell.Tab.1.right" timestamp="1579655189100">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state width="1504" height="333" key="GridCell.Tab.1.right/0.0.1504.963@0.0.1504.963" timestamp="1579655189100" />
+    <state x="254" y="125" key="SettingsEditor" timestamp="1579578529318">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="254" y="125" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1579578529318" />
+    <state x="553" y="153" width="606" height="696" key="ftp.server.browser" timestamp="1579637110083">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="553" y="153" width="606" height="696" key="ftp.server.browser/0.0.1504.963@0.0.1504.963" timestamp="1579637110083" />
+    <state x="415" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1579722643608">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="415" y="219" width="672" height="678" key="search.everywhere.popup/0.0.1504.963@0.0.1504.963" timestamp="1579722643607" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/RFMGen$main.coverage" NAME="main Coverage Results" MODIFIED="1579655174953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

@@ -42,11 +42,11 @@ def extract_region_features(model, loaders, device, args):
     model.eval()
 
     with torch.no_grad():
-        for loader_key, loader in tqdm(loaders.items()):
+        for loader_key, loader in loaders.items():
             row_pointer, table = create_new_table(args=args, prefix=loader_key, mode='w')
 
             print("Created the {} tables.".format(loader_key))
-            for batch_idx, (data, _) in enumerate(loader):
+            for batch_idx, (data, _) in enumerate(tqdm(loader)):
                 data = data.to(device)
                 batch_region_features, npc = model([data])
                 row_pointer['rf'] = batch_region_features.cpu().numpy()
@@ -98,7 +98,6 @@ def main():
     object_detection_config.merge_from_file(args.rpn_config_path)
     object_detection_config.MODEL.WEIGHTS = args.rpn_pretrained_path
     rf_generator = RFGenerator(args=args, cfg=object_detection_config, device=device, num_max_regions=args.num_max_regions).to(device)
-    # optimizer = optim.Adam(rf_generator.parameters(), lr=args.lr)
 
     loaders = {
         'train': train_loader,
@@ -106,7 +105,7 @@ def main():
     }
 
     # Region features will be a dictionary
-    region_features = extract_region_features(rf_generator, loaders, device, args)
+    extract_region_features(rf_generator, loaders, device, args)
 
 
 if __name__ == '__main__':

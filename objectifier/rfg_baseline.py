@@ -7,7 +7,7 @@ from detectron2.structures import ImageList
 
 
 class RFGenerator(nn.Module):
-    def __init__(self, cfg, device):
+    def __init__(self, args, cfg, device, num_max_regions):
         super(RFGenerator, self).__init__()
         self.device = device
         self.cfg = cfg
@@ -24,6 +24,8 @@ class RFGenerator(nn.Module):
             sampling_ratio=self.sampling_ratio,
             pooler_type="ROIPool"
         )
+        self.num_max_regions = num_max_regions
+        self.args = args
 
     def forward(self, x):
         """
@@ -50,5 +52,10 @@ class RFGenerator(nn.Module):
             rf_H = region_feature_matrix.shape[3]
 
             region_feature_matrix = region_feature_matrix.view(-1, rf_C * rf_W * rf_H)
+            region_feature_matrix = region_feature_matrix[:, :4096]
 
-        return region_feature_matrix
+            npc = region_feature_matrix.shape[0]
+            region_feature_matrix_padded = torch.zeros([self.args.batch_size * self.args.num_max_regions, 4096])
+            region_feature_matrix_padded[:npc, :] = region_feature_matrix
+
+        return region_feature_matrix_padded, npc

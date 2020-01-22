@@ -1,12 +1,36 @@
 import argparse
 import torch
+import os
 from torchvision import datasets, transforms
 from detectron2.config import get_cfg
 from objectifier.rfg_baseline import RFGenerator
 from tqdm import tqdm
+from tables import *
 
 
-def extract_region_features(model, loaders, device):
+def create_new_table(args, prefix, mode):
+    """
+    Creates a new PyTables table (HDF5) format with the given path and prefix.
+    :param args: A set of arguments passed to the main program while running it!
+    :param prefix: A prefix which will be added to the path_to_table.
+    :param mode: Either of write/read mode.
+    :return: Row pointer of the table.
+    """
+
+    class RegionFeatures(IsDescription):
+        rf = Float32Col((args.batch_size * args.num_max_regions, 4096))
+        npc = Int8Col()     # Used to refer to the actual entries of a row (not padded counts)
+
+    path_to_h5_file = os.path.join(args.rf_path, prefix) + args.save_type
+    h5file = open_file(path_to_h5_file, mode=mode, title=prefix + " region features")
+    group = h5file.create_group("/", 'detector', 'Detector information')
+    table = h5file.create_table(group, 'readout', RegionFeatures, "Readout example")
+    row_pointer = table.row
+
+    return row_pointer, table
+
+
+def extract_region_features(model, loaders, device, args):
     """
     Passes all the data inside loaders module to the model for region feature extractions.
     :param model: A model inherited from Module.nn
@@ -15,20 +39,21 @@ def extract_region_features(model, loaders, device):
     :param device: A variable specifying the computing device.
     :return: A dictionary containing the region feature matrices for the corresponding keys in the loaders dictionary.
     """
-    return_rfs = {}
     model.eval()
 
     with torch.no_grad():
-        for loader_key, loader in loaders.items():
-            rfs = []
-            for batch_idx, (data, _) in enumerate(tqdm(loader)):
+        for loader_key, loader in tqdm(loaders.items()):
+            row_pointer, table = create_new_table(args=args, prefix=loader_key, mode='w')
+
+            print("Created the {} tables.".format(loader_key))
+            for batch_idx, (data, _) in enumerate(loader):
                 data = data.to(device)
-                batch_region_features = model([data])
-                # rfs.append(batch_region_features)
+                batch_region_features, npc = model([data])
+                row_pointer['rf'] = batch_region_features.cpu().numpy()
+                row_pointer['npc'] = npc
+                row_pointer.append()
 
-            return_rfs[loader_key] = rfs
-
-    return return_rfs
+            table.flush()
 
 def main():
     parser = argparse.ArgumentParser(description='Region Feature Matrix Generation Script.')
@@ -41,6 +66,9 @@ def main():
     parser.add_argument('--dataset-path', type=str, default='/local-scratch/cifar-dataset')
     parser.add_argument('--rpn-config-path', type=str, default='./detectron-configs/base_rcnn_rpn.yaml')
     parser.add_argument('--rpn-pretrained-path', type=str, default='./pretrained/model_final.pkl')
+    parser.add_argument('--num-max_regions', type=int, default=30)
+    parser.add_argument('--rf-path', type=str, default='./rf')
+    parser.add_argument('--save-type', type=str, default='.h5')
     parser.add_argument('--no-cuda', default=False)
 
     args = parser.parse_args()
@@ -69,7 +97,7 @@ def main():
     object_detection_config = get_cfg()
     object_detection_config.merge_from_file(args.rpn_config_path)
     object_detection_config.MODEL.WEIGHTS = args.rpn_pretrained_path
-    rf_generator = RFGenerator(cfg=object_detection_config, device=device).to(device)
+    rf_generator = RFGenerator(args=args, cfg=object_detection_config, device=device, num_max_regions=args.num_max_regions).to(device)
     # optimizer = optim.Adam(rf_generator.parameters(), lr=args.lr)
 
     loaders = {
@@ -78,7 +106,7 @@ def main():
     }
 
     # Region features will be a dictionary
-    region_features = extract_region_features(rf_generator, loaders, device)
+    region_features = extract_region_features(rf_generator, loaders, device, args)
 
 
 if __name__ == '__main__':
